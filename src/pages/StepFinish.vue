@@ -1,9 +1,9 @@
 <template>
-  <q-card class="text-center full-height bg-red text-white">
-    <q-card-section class="absolute-center">
+  <q-card class="q-pa-md full-height bg-yellow-9">
+    <div class="row full-height justify-center items-center text-center text-white">
       <p style="font-size: 32px">
-        Continuar con ventilacion mecanica
+        Continuar con ventilación mecánica
       </p>
-    </q-card-section>
+    </div>
   </q-card>
 </template>

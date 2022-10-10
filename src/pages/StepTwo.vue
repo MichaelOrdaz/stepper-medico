@@ -1,24 +1,28 @@
 <template>
-  <q-card dark class="text-center full-height q-py-md">
-    <q-card-section>
-      <p style="font-size: 32px" class="q-my-none">
-        ¿Hay estabilidad fisiologica y metabolica?
-      </p>
-    </q-card-section>
-
-    <div class="row">
-      <div class="col">
-        <q-btn size="lg" class="q-px-xl" color="primary" :to="{name: routeNames.STEP_3}">SI</q-btn>
-      </div>
-      <div class="col">
-        <q-btn
-          size="lg"
-          class="q-px-xl"
-          color="orange"
-          :to="{name: routeNames.STEP_FINISH}"
-        >
-          NO
-        </q-btn>
+  <q-card dark class="q-pa-md full-height">
+    <div class="row full-height justify-center items-center">
+      <div class="col text-center">
+        <p style="font-size: 32px">
+          ¿Hay estabilidad fisiologica y metabolica?
+        </p>
+        <div class="q-gutter-md">
+          <q-btn
+            size="lg"
+            class="q-px-xl"
+            color="primary"
+            :to="{name: routeNames.STEP_3}"
+          >
+            SI
+          </q-btn>
+          <q-btn
+            size="lg"
+            class="q-px-xl"
+            color="orange"
+            :to="{name: routeNames.STEP_FINISH}"
+          >
+            NO
+          </q-btn>
+        </div>
       </div>
     </div>
   </q-card>
