@@ -1,10 +1,10 @@
 <template>
-  <div class="row">
+  <div class="row q-mb-md">
     <div
-      class="col text-center text-white"
+      class="col-12 col-sm text-center text-white order-xs-last"
     >
       <h6
-        class="q-ma-sm"
+        class="q-ma-sm micolor"
       >
         Servicios de Salud del Estado de Puebla
         <br/>
@@ -15,7 +15,7 @@
         Terapia Intensiva
       </h6>
     </div>
-    <div class="col-auto">
+    <div class="col-sm-auto col-12 q-mb-sm">
       <q-img
         src="logo.jpg"
         style="width: 150px"
@@ -23,29 +23,39 @@
     </div>
   </div>
 
-  <div class="q-mx-xl q-mb-lg">
+  <div class="q-mx-sm q-my-sm">
     <div class="row">
       <div class="col">
-        <q-card dark class="text-center">
+        <q-card class="text-center text-white bg-red-10">
           <q-card-section>
-            <h3 style="font-size: 32px" class="q-my-none">PROTOCOLO</h3>
-            <h1 style="font-size: 36px" class="text-weight-bold q-my-none">
+            <span style="font-size: 32px" class="text-yellow">PROTOCOLO</span> <br />
+            <span style="font-size: 36px" class="text-weight-bold">
               Retiro de la ventilacion mecánica en el paciente neurocrítico
-            </h1>
+            </span>
           </q-card-section>
         </q-card>
       </div>
     </div>
   </div>
 
-  <div class="q-mx-xl">
+  <div class="row q-mx-sm q-my-sm" v-if="$route.name !== 'start'">
+    <q-btn
+      icon="home"
+      color="black"
+      class="q-mr-sm"
+      :to="{name: routeNames.START}"
+    />
+    <q-btn icon="arrow_back" color="black" @click="$router.back()" />
+  </div>
+
+  <div class="q-mx-sm">
     <div class="row q-col-gutter-lg">
-      <div class="col col-sm-8">
+      <div class="col-12 col-sm-7 col-md-8">
         <router-view />
       </div>
 
-      <div class="col col-sm-4">
-        <q-card dark>
+      <div class="col-12 col-sm-5 col-md-4">
+        <q-card class="bg-grey-9 text-white">
           <q-card-section>
             <p
               style="font-size: 32px"
@@ -66,3 +76,13 @@
 
   <div class="q-mb-xl"></div>
 </template>
+<script setup>
+import routeNames from 'src/router/routeNames';
+</script>
+<style lang="scss" scoped>
+@media (max-width: $breakpoint-xs) {
+  .order-xs-last {
+    order: 1;
+  }
+}
+</style>
