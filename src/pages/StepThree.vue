@@ -10,7 +10,11 @@
             <li><a href="javascript://" class="link" @click="godet = true">Escore de Godet</a> > 9 pts.</li>
             <li>Aspiraciones traqueales con intervalo > 3h</li>
             <li><a href="javascript://" class="link" @click="esfuerzoDeTos = true">Esfuerzo de tos</a> > 56 l/min</li>
-            <li>Score de disnea &lt; 4</li>
+            <li>
+              Score de
+              <a href="javascript://" class="link" @click="disnea = true">disnea</a>
+              &lt; 4
+            </li>
           </ul>
         </p>
         <div class="q-gutter-md">
@@ -63,6 +67,22 @@
       </q-card-actions>
     </q-card>
   </q-dialog>
+
+  <q-dialog v-model="disnea">
+    <q-card style="width: 800px; max-width: 80vw; font-size: 18px" class="bg-grey-8 text-white">
+      <q-btn flat icon="close" color="white" v-close-popup />
+
+      <div class="q-gutter-y-md">
+        <q-img src="disnea-1.png" class="q-mx-auto" style="max-width: 90%; display: block" />
+        <q-img src="disnea-2.png" class="q-mx-auto" style="max-width: 90%; display: block" />
+        <q-img src="disnea-3.png" class="q-mx-auto" style="max-width: 90%; display: block" />
+      </div>
+
+      <q-card-actions align="right">
+        <q-btn flat label="Cerrar" color="white" v-close-popup />
+      </q-card-actions>
+    </q-card>
+  </q-dialog>
 </template>
 <script setup>
 import routeNames from 'src/router/routeNames';
@@ -70,6 +90,7 @@ import { ref } from 'vue';
 
 const esfuerzoDeTos = ref(false);
 const godet = ref(false);
+const disnea = ref(false);
 
 </script>
 <style scoped>
